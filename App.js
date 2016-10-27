@@ -4,6 +4,7 @@ import {
   Text,
   View,
   Platform,
+  TouchableOpacity,
 } from 'react-native';
 import OneSignal from 'react-native-onesignal';
 
@@ -21,6 +22,14 @@ class App extends Component {
         <Text style={styles.instructions}>
           Using {Platform.OS}? Cool.
         </Text>
+        {Platform.OS === 'ios' ?
+          <TouchableOpacity
+            onPress={() => OneSignal.registerForPushNotifications()}
+            style={{ padding: 20, backgroundColor: '#3B5998' }}
+          >
+            <Text style={{ color: '#fff' }}>Request Push Notification Permission</Text>
+          </TouchableOpacity>
+        : null}
       </View>
     );
   }

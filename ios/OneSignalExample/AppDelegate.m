@@ -21,7 +21,8 @@
   NSURL *jsCodeLocation;
 
   self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
-                                                       appId:@"YOUR_ONESIGNAL_APP_ID"];
+                                                       appId:@"YOUR_ONESIGNAL_APP_ID"
+                                                       autoRegister:false];
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
