@@ -5,12 +5,25 @@ import {
   View,
   Platform,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import OneSignal from 'react-native-onesignal';
+import Toast from 'react-native-root-toast';
 
 class App extends Component {
   componentDidMount() {
-    OneSignal.configure({});
+    OneSignal.configure({
+      onNotificationOpened: this.handleNotification,
+    });
+  }
+
+  handleNotification(message, data, isActive) {
+    if (isActive) {
+      Toast.show(message);
+    } else {
+      // NOTE: This is the point at which you would tap into your routing system
+      Alert.alert(message, JSON.stringify({ name: data.room }));
+    }
   }
 
   render() {

@@ -8,9 +8,12 @@
     "ios": "open ios/OneSignalExample.xcworkspace"
   },
   "dependencies": {
+    "install": "^0.8.2",
+    "npm": "^3.10.9",
     "react": "15.3.2",
     "react-native": "^0.36.0",
-    "react-native-onesignal": "^1.2.2"
+    "react-native-onesignal": "^1.2.2",
+    "react-native-root-toast": "^1.0.3"
   },
   "jest": {
     "preset": "jest-react-native"
