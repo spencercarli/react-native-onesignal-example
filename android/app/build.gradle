@@ -106,6 +106,8 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        manifestPlaceholders = [onesignal_app_id: "83fe21cc-69af-490d-ab97-cfeb12d47046",
+                                onesignal_google_project_number: "REMOTE"]
     }
     splits {
         abi {
@@ -137,6 +139,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-onesignal')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
